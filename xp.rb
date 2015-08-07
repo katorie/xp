@@ -17,8 +17,8 @@ TAXES = {'北海道': 6.85, '東日本': 8, '西日本': 6.25, '四国': 4, '九
 
 puts %!#{area} の税率は#{TAXES[:"#{area}"]}です!
 
-
-total = price.to_i * count.to_i * ( 1 + TAXES[:"#{area}"] / 100 )
-
+tax_rate = 1 + TAXES[:"#{area}"] / 100
+discount_rate = 1 - 0.03
+total = price.to_i * count.to_i * tax_rate * discount_rate
 
 puts "合計は#{total}です。"
